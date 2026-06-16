@@ -1,5 +1,6 @@
 body {
   font-family: 'Courier New', Courier, monospace;
+  text-align: center;
 }
 
 img {
@@ -10,6 +11,25 @@ img {
 .title {
   font-size: 36px;
   font-weight: 900;
+  padding-bottom: 32px; /*this needed to be margin not padding*/
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 52px;
+}
+
+div.item {
+  /* none of these properties were needed as the items inherit 
+  the flex properties from the parent container, have over complicated it.
+  The width was also set by max-width*/ 
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 1 200px;
 }
 
 /* do not edit this footer */
