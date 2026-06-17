@@ -2,28 +2,73 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   height: 72px;
   background: darkmagenta;
   color: white;
+  font-size: 32px;
+  font-weight: 900;
+  padding-left: 16px;
+  display: flex;
+  align-items: center;
 }
 
 .footer {
   height: 72px;
   background: #eee;
   color: darkmagenta;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sidebar {
   width: 300px;
   background: royalblue;
   box-sizing: border-box;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
+}
+
+.sidebar li {
+    list-style-type: none;
+    /*added after solution*/
+    margin-bottom: 16px;
 }
 
 .card {
   border: 1px solid #eee;
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
+  flex-basis: 360px; /* should have used width instead of flex-basis */
+  padding: 16px;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: stretch; /*don't need this property as flex: 1; tells the container to take up all available space */
+  flex-grow: 1;
+}
+
+.card-wrapper {
+  padding: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ul added after solution - needed to be added to remove default spacing */
+ul {
+  padding: 0;
+  margin: 0;
 }
